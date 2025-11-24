@@ -17,7 +17,6 @@
     $password = $_POST['password'];
 
     require_once('database/database.php');
-    mysqli_report(MYSQLI_REPORT_STRICT);
     try {
         $connection = new mysqli($server, $user, $pass, $database);
     }

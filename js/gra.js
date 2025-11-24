@@ -50,16 +50,17 @@ function game(){
     }, 2000);
 }
 
-const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
+const RANDOM_QUOTE_API_URL = "https://dummyjson.com/quotes/random";
 
 async function getRandomQuote() {
-    const request = new Request(RANDOM_QUOTE_API_URL);
-    const response = await fetch(request);
+    const response = await fetch(RANDOM_QUOTE_API_URL);
     const quote = await response.json();
+
     text.innerHTML = "";
-    splitQuote(quote.content);
+    splitQuote(quote.quote);
     author.innerHTML = quote.author;
 }
+
 
 function splitQuote(quote){
     quote.split("").forEach(span => {
